@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "List" ALTER COLUMN "order" SET DATA TYPE BIGINT;
+
+-- AlterTable
+ALTER TABLE "Task" ALTER COLUMN "order" SET DATA TYPE BIGINT;
