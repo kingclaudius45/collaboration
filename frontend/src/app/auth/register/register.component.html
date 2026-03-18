@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card">
+    <h2 class="form-title">Create an Account</h2>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Enter your full name" [(ngModel)]="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter your email" [(ngModel)]="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Create a password" [(ngModel)]="password" />
+    </mat-form-field>
+
+    <button class="btn btn-primary full-width" (click)="register()">
+      Register
+    </button>
+
+    <div class="redirect-text">
+      Already have an account? <a routerLink="/">Login</a>
+    </div>
+  </div>
+</div>

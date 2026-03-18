@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card">
+    <h2 class="form-title">Welcome Back</h2>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter your email" [(ngModel)]="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Enter your password" [(ngModel)]="password" />
+    </mat-form-field>
+
+    <button class="btn btn-primary full-width" (click)="login()">
+      Login
+    </button>
+
+    <div class="divider-container">
+      <hr class="divider" />
+      <span class="divider-text">OR</span>
+    </div>
+
+    <button class="btn btn-google full-width" (click)="googleLogin()">
+      <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google" class="google-icon" />
+      Login with Google
+    </button>
+
+    <div class="redirect-text">
+      Don't have an account? <a routerLink="/register">Register</a>
+    </div>
+  </div>
+</div>

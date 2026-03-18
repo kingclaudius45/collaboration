@@ -1,0 +1,70 @@
+<div class="workspace-layout">
+  
+  <div class="workspace-header">
+    <h2>Workspace Boards</h2>
+    
+    <button class="team-toggle-btn" (click)="toggleTeamModal()">
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+      Manage Team
+    </button>
+    <button class="action-btn" (click)="toggleTeamModal()">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        Manage Team
+      </button>
+  </div>
+
+  <div class="boards-section">
+    <app-board-list></app-board-list>
+  </div>
+
+  
+
+  <div class="modal-overlay" *ngIf="isTeamModalOpen" (click)="toggleTeamModal()">
+    <div class="mini-ui-modal" (click)="$event.stopPropagation()">
+      
+      <div class="modal-header">
+        <div class="section-header">
+          <h2>Workspace Team</h2>
+          <p>Invite members and manage access</p>
+        </div>
+        <button class="close-btn" (click)="toggleTeamModal()">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="invite-box">
+          <input
+            placeholder="name@company.com"
+            [(ngModel)]="memberEmail"
+            (keyup.enter)="invite()"
+          />
+          <button (click)="invite()">Invite</button>
+        </div>
+
+        <div class="members-list">
+          <div class="member-badge" *ngFor="let m of members">
+            <div class="avatar">{{ m.user.email.charAt(0).toUpperCase() }}</div>
+            <span class="email">{{ m.user.email }}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="modal-overlay" *ngIf="isActivityModalOpen" (click)="toggleActivityModal()">
+    <div class="mini-ui-modal" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <div class="section-header">
+          <h2>Recent Activity</h2>
+          <p>Track everything happening in this workspace</p>
+        </div>
+        <button class="close-btn" (click)="toggleActivityModal()">✕</button>
+      </div>
+      <div class="modal-body activity-modal-body">
+        <app-activity-feed [workspaceId]="workspaceId"></app-activity-feed>
+      </div>
+    </div>
+  </div>
+
+</div>

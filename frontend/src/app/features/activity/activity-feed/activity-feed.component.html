@@ -1,0 +1,15 @@
+<div class="activity-container">
+  <h3>Recent Activity</h3>
+
+  <div class="activity-item" *ngFor="let act of activities">
+    <span class="user">{{ act.user.email }}</span>
+    <span class="action">{{ act.action }}</span>
+    <span class="task-title" *ngIf="act.task">"{{ act.task.title }}"</span>
+    
+    <span class="time">{{ act.createdAt | date:'short' }}</span>
+  </div>
+
+  <div class="empty-state" *ngIf="!activities || activities.length === 0">
+    No recent activity to show in this workspace.
+  </div>
+</div>

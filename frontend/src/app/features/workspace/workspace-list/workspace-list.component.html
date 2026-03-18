@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="workspace-wrapper">
+    <div class="header">
+      <h2>Your Workspaces</h2>
+      <p class="subtitle">Manage your projects and collaborate</p>
+    </div>
+
+    <div class="create-box">
+      <input 
+        placeholder="Enter a new workspace name..." 
+        [(ngModel)]="newWorkspaceName" 
+        (keyup.enter)="createWorkspace()"
+      />
+      <button (click)="createWorkspace()">Create Workspace</button>
+    </div>
+
+    <div class="grid" *ngIf="workspaces.length > 0">
+      <div
+        class="card"
+        *ngFor="let ws of workspaces"
+        [routerLink]="['/workspace', ws.id]"
+      >
+        <div class="card-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+        </div>
+        <div class="card-title">{{ ws.name }}</div>
+      </div>
+    </div>
+    <div class="empty-state" *ngIf="workspaces.length === 0">
+      <span class="empty-icon">🚀</span>
+      <h3>No workspaces yet</h3>
+      <p>Create your first workspace above to get started.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+.board-wrapper {
+  min-height: 100vh;
+  background-color: #0f172a; /* Keeps the sleek dark theme */
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* 1. Create List is now pinned at the top 
+*/
+.top-bar {
+  padding: 24px 24px 16px 24px;
+}
+
+.create-list {
+  display: flex;
+  gap: 12px;
+  background: #1e293b;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  max-width: 500px; /* Keeps the input area from stretching too wide */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.create-list input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.create-list input:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+.create-list button {
+  padding: 10px 24px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.create-list button:hover {
+  background: #2563eb;
+}
+
+/* 2. Lists display below in one line with a horizontal scroller 
+*/
+.board-canvas {
+  display: flex;
+  align-items: flex-start; /* Keeps columns from stretching vertically */
+  gap: 24px;
+  padding: 0 24px 24px 24px;
+  overflow-x: auto; /* Adds the horizontal scrollbar */
+  flex: 1; 
+  padding-bottom: 30px; /* Extra padding for the scrollbar */
+}
+
+/* Customizing the scrollbar for a cleaner look */
+.board-canvas::-webkit-scrollbar {
+  height: 12px;
+}
+.board-canvas::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5); 
+  border-radius: 8px;
+  margin: 0 24px;
+}
+.board-canvas::-webkit-scrollbar-thumb {
+  background: #475569; 
+  border-radius: 8px;
+}
+.board-canvas::-webkit-scrollbar-thumb:hover {
+  background: #64748b; 
+}

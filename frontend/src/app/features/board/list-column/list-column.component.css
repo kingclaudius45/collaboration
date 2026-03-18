@@ -1,0 +1,170 @@
+/* Container */
+.list-wrapper {
+  background: #1e293b;
+  width: 300px;
+  min-width: 300px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  /* Accounts for the top-bar height so the list doesn't overflow the screen vertically */
+  max-height: calc(100vh - 120px); 
+  border: 1px solid #334155;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.list-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+}
+
+.list-header h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.list-menu {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.list-menu:hover {
+  background: #334155;
+  color: #f8fafc;
+}
+
+/* Scrollable area for tasks */
+.task-container {
+  padding: 0 12px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 50px; /* Ensures empty lists still have drop space */
+}
+
+/* Sleek custom scrollbar for tasks */
+.task-container::-webkit-scrollbar {
+  width: 6px;
+}
+.task-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.task-container::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+.task-container::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Slimmer, more professional task cards */
+.task-card {
+  background: #27354f;
+  padding: 10px 14px; /* Slimmed down from 14px 16px */
+  border-radius: 6px; /* Slightly sharper corners */
+  color: #e2e8f0;
+  font-size: 0.9rem; /* Slightly smaller text */
+  cursor: pointer;
+  border: 1px solid #334155;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: border-color 0.2s ease, background 0.2s ease;
+  word-wrap: break-word;
+}
+
+.task-card:hover {
+  border-color: #60a5fa;
+  background: #2d3e5a;
+}
+.task-card:active {
+  cursor: grabbing;
+}
+
+/* --- CDK Drag & Drop Polish --- */
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  background: #2d3e5a;
+  border: 1px solid #60a5fa;
+  padding: 14px 16px;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+  background: #0f172a;
+  border: 2px dashed #475569;
+  color: transparent; 
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.task-container.cdk-drop-list-dragging .task-card:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Add Task Input Area */
+.add-task-container {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-task-container input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #f8fafc;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.add-task-container input:focus {
+  background: #0f172a;
+  border-color: #475569;
+}
+
+.add-task-container input::placeholder {
+  color: #94a3b8;
+}
+
+.add-btn {
+  align-self: flex-start;
+  padding: 6px 12px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.add-task-container:focus-within .add-btn {
+  opacity: 1;
+}
+
+.add-btn:hover {
+  background: #2563eb;
+}

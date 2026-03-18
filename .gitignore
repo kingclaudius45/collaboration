@@ -1,10 +1,5 @@
 node_modules
 dist
 .env
-.env.local
-package-lock.json
-.prisma
-coverage
 .angular
-.next
-build
+coverage

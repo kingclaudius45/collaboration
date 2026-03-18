@@ -1,0 +1,22 @@
+<div class="board-wrapper">
+  
+  <div class="top-bar">
+    <div class="create-list">
+      <input
+        placeholder="Name your new list..."
+        [(ngModel)]="newListName"
+        (keyup.enter)="createList()"
+      />
+      <button (click)="createList()">Add List</button>
+    </div>
+  </div>
+
+  <div class="board-canvas">
+    <app-list-column
+      *ngFor="let list of lists"
+      [list]="list"
+      [connectedLists]="lists"
+    ></app-list-column>
+  </div>
+
+</div>

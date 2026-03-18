@@ -1,0 +1,219 @@
+/* ========================================== */
+/* ULTRA-HIGH Z-INDEX MODAL OVERLAY           */
+/* ========================================== */
+
+/* ADD THIS BACK TO THE TOP OF YOUR CSS */
+.workspace-layout {
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: 'Inter', -apple-system, sans-serif;
+  padding: 40px 24px;
+}
+
+.workspace-header {
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 20px;
+}
+
+.workspace-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.team-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  z-index: 10; /* Ensures the button is clickable */
+}
+
+.team-toggle-btn:hover {
+  background: #27354f;
+  border-color: #60a5fa;
+}
+
+.boards-section, .activity-section {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+/* Keep your modal-overlay CSS below this... */
+
+.modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100vw; /* Use viewport width/height to guarantee full coverage */
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.85); /* Slightly darker to hide the background better */
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Cranking this up to beat any other element on the page */
+  animation: fadeIn 0.2s ease-out;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mini-ui-modal {
+  background: #1e293b;
+  width: 90%; /* Responsive width */
+  max-width: 480px;
+  border-radius: 16px;
+  border: 1px solid #475569; /* Slightly brighter border to pop */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); /* Deep shadow */
+  display: flex;
+  flex-direction: column;
+  animation: scaleUp 0.2s ease-out;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+  padding: 24px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.section-header h2 { 
+  margin: 0 0 6px 0; 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  color: #f8fafc;
+}
+.section-header p { 
+  margin: 0; 
+  color: #94a3b8; 
+  font-size: 0.95rem; 
+}
+
+/* Make the close button very obvious and clickable */
+.close-btn {
+  background: #334155;
+  border: none;
+  color: #e2e8f0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.close-btn:hover { 
+  background: #ef4444; /* Turns red on hover to indicate "close" */
+  color: #ffffff; 
+  transform: rotate(90deg); /* Cool little interaction effect */
+}
+
+.modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.invite-box {
+  display: flex;
+  gap: 12px;
+}
+
+.invite-box input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.invite-box input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+.invite-box button {
+  padding: 12px 20px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.invite-box button:hover { background: #2563eb; }
+
+/* Vertically stacked members for the modal */
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 4px; /* Room for scrollbar */
+}
+
+/* Custom scrollbar for members list */
+.members-list::-webkit-scrollbar { width: 6px; }
+.members-list::-webkit-scrollbar-track { background: transparent; }
+.members-list::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+.members-list::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+.member-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #0f172a;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  transition: border-color 0.2s;
+}
+
+.member-badge:hover {
+  border-color: #475569;
+}
+
+.avatar {
+  width: 32px; height: 32px;
+  background: #60a5fa;
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; font-weight: 700;
+}
+
+.email { font-size: 0.95rem; color: #e2e8f0; font-weight: 500; }

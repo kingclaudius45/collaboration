@@ -1,0 +1,153 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px; /* Better for mobile responsiveness */
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Adds a deep shadow for a 3D effect */
+  background-color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.form-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #141e30;
+  font-weight: 500;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.divider {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.redirect-text {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #666;
+}
+
+.redirect-text a {
+  color: #243b55;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.redirect-text a:hover {
+  color: #141e30;
+  text-decoration: underline;
+}
+
+/* Custom Button Base */
+.btn {
+  height: 48px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Primary Login Button */
+.btn-primary {
+  background-color: #243b55; /* Matches your gradient */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #141e30;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+.btn-primary:active {
+  transform: translateY(1px); /* Click down effect */
+}
+
+/* Google Button */
+.btn-google {
+  background-color: white;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+.btn-google:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.1);
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+/* Stylish Divider */
+.divider-container {
+  position: relative;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  margin: 0;
+}
+
+.divider-text {
+  background: white;
+  padding: 0 15px;
+  color: #777;
+  font-size: 14px;
+  position: relative;
+  top: -10px; /* Pulls the text up to sit directly on the line */
+}
+
+.board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.list {
+  width: 250px;
+  background: #2d3748;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.task {
+  background: #4a5568;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: grab;
+}

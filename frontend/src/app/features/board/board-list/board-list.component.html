@@ -1,0 +1,31 @@
+<div class="board-container">
+  <div class="board-header">
+    <div class="title-section">
+      <h2>Workspace Boards</h2>
+      <p>Select a board to start managing tasks</p>
+    </div>
+
+    <div class="create-board">
+      <input
+        placeholder="Name your new board..."
+        [(ngModel)]="newBoardName"
+        (keyup.enter)="createBoard()"
+      />
+      <button (click)="createBoard()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        New Board
+      </button>
+    </div>
+  </div>
+
+  <div class="board-grid">
+    <div class="board-card" *ngFor="let board of boards" [routerLink]="['/board', board.id]">
+      <div class="board-content">
+        <span class="board-name">{{ board.name }}</span>
+        <div class="board-decoration">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

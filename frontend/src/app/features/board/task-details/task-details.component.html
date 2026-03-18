@@ -1,0 +1,41 @@
+<div class="modal-overlay">
+  <div class="task-details-modal">
+    
+    <div class="modal-header">
+      <h2>{{ task.title }}</h2>
+    </div>
+    <div class="modal-body">
+      <div class="input-group">
+        <label>Description</label>
+        <textarea
+          [(ngModel)]="task.description"
+          placeholder="Add a more detailed description..."
+        ></textarea>
+      </div>
+
+      <div class="row-group">
+        <div class="input-group">
+          <label>Priority</label>
+          <select [(ngModel)]="task.priority">
+            <option value="LOW">Low</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="HIGH">High</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Due Date</label>
+          <input
+            type="date"
+            [(ngModel)]="task.dueDate"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="save-btn" (click)="save()">Save Changes</button>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.activity-container {
+  padding: 24px;
+  background: #1e293b;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  font-family: 'Inter', -apple-system, sans-serif;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.activity-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap; /* Allows wrapping on very small screens */
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.user {
+  font-weight: 600;
+  color: #60a5fa; /* Blue accent for the user */
+}
+
+.action {
+  color: #cbd5e1; /* Soft gray for the action text */
+}
+
+.task-title {
+  color: #e2e8f0;
+  font-style: italic;
+}
+
+.time {
+  margin-left: auto; /* Pushes the time to the far right */
+  font-size: 0.85rem;
+  color: #94a3b8;
+  background: #0f172a;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 24px;
+  color: #94a3b8;
+  font-style: italic;
+}

@@ -1,0 +1,35 @@
+<div class="list-wrapper">
+  
+  <div class="list-header">
+    <h3>{{ list.name }}</h3>
+    <button class="list-menu">⋯</button>
+  </div>
+
+  <div
+    class="task-container"
+  >
+    <div
+      class="task-card"
+      *ngFor="let task of list.tasks"
+      (click)="selectTask(task)"
+    >
+      {{ task.title }}
+    </div>
+  </div>
+
+  <app-task-details
+ *ngIf="selectedTask"
+ [task]="selectedTask"
+ (close)="selectedTask = null"
+></app-task-details>
+
+  <div class="add-task-container">
+    <input
+      placeholder="+ Add a card..."
+      [(ngModel)]="newTaskTitle"
+      (keyup.enter)="createTask()"
+    />
+    <button class="add-btn" (click)="createTask()">Add</button>
+  </div>
+
+</div>
