@@ -184,7 +184,7 @@ http://localhost:4200
 
 ## 📸 Screenshots (Optional)
 
-*Add screenshots here for better presentation*
+*TODO
 
 ---
 
